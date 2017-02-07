@@ -7,7 +7,7 @@
 		<title>reveal.js</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/simple.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -24,8 +24,79 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h2>TheTitle</h2>
+					<h3>TheSubTitle</h3>
+					<br/>
+					<h3>Kathryn (Katy) Huff</h3>
+				</section>
+				<section>
+					<section
+						data-background="./images/valentine.png" data-background-size="cover">
+					</section>
+					<section data-background="./images/valentine.png" data-background-size="cover" style="background: rgba(255, 255, 255, 0.95);">
+						<p class="fragment">BackgroundSlide</p>
+						<p class="fragment">WithText</p>
+					</section>
+				</section>
+				<section>
+					<h3>ImageSlide</h3>
+					<a href="http://fuelcycle.org" class="image"><img
+					     height="400"
+					     src="./images/storytime.png"
+					     alt="alttext."></a>
+					<p>Caption.</p>
+					</section>
+				<section>
+					<h3>ItemSlide</h3>
+                        <ul>
+                            <li class="fragment">appearing item</li>
+                            <li class="fragment fade-out">disappearing item</li>
+                            <li>$C_0 = 100$ math</li>
+                        </ul>
+				</section>
+                                <section>
+                                        <h3>IFrameSlide</h3>
+                                        <iframe src="https://earth.nullschool.net" width="800" height=600  frameborder="0" marginwidth="0" marginheight="0" scrolling="yes" style="border:0px; margin-bottom:5px; max-width: 800;" allowfullscreen> </iframe>
+				</section>
+				<section>
+					<h2>MathSlide</h2>
+					<br/>
+					<small>
+					    \[
+					    \begin{align}
+					    \min_{x} z &= \sum_{i\in I}\sum_{j\in J} c_{i,j}x_{i,j} & \\
+					    s.t & \sum_{i\in I_s}\sum_{j\in J} a_{i,j}^k x_{i,j} \le b_s^k & \forall k\in K_s, \forall s\in S\\
+					    & \sum_{J\in J_r}\sum_{i\in I} a_{i,j}^k x_{i,j} \le b_r^k & \forall k\in K_r, \forall r\in R\\
+					    & x_{i,j} \in [0,x_j] & \forall i\in I, \forall j\in J
+					    \end{align}
+					    \]
+					</small>
+				</section>
+				<section>
+					<h2>Code Slide</h2>
+					<span class="fragment">
+<pre><code class="xml">
+     <fuel>
+     <incommodity>mox</incommodity>
+-    <outcommodity>waste</outcommodity>
++    <outcommodity>spent_fuel</outcommodity>
+     <inrecipe>mox_fresh_fuel</inrecipe>
+     <outrecipe>mox_spent_fuel</outrecipe>
+     </fuel>
+</code></pre>
+					</span>
+				</section>
+				<section>
+					<section>
+					    <h1>THE END</h1>
+					    <h3>Katy Huff </h3>
+					    <a href="https://katyhuff.github.io/repo-name">katyhuff.github.io/repo-name</a>
+
+					    <br/>
+					    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">TheTitleTheSubTitle</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://katyhuff.github.io" property="cc:attributionName" rel="cc:attributionURL">Kathryn Huff</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="http://katyhuff.github.io/repo-name" rel="dct:source">http://katyhuff.github.io/repo-name</a>.
+					</section>
+				</section>
 			</div>
 		</div>
 
@@ -36,13 +107,17 @@
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				history: true,
-
+				math: {
+						mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js',
+						config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+					    },
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/math/math.js', async: true }
 				]
 			});
 		</script>
